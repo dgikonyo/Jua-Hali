@@ -3,7 +3,9 @@ const mongoose=require('mongoose');
 const DisasterSchema=mongoose.Schema({//will describe how our data looks like
     disasterName:{
         type:String,
-        required:true
+        minlength:[5,'Disaster name cannot be less than 5 characters'],
+        maxlength:[30,'Disaster Name cannot be more than 30 characters '],
+        required:true 
     },
     location:{
         type:String,
@@ -24,4 +26,5 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
 
 });
 
-module.exports=mongoose.model('Disaster',DisasterSchema);
+const Disaster=mongoose.model('Disaster',DisasterSchema);
+module.exports=Disaster;
