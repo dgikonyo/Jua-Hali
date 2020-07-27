@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const DisasterSchema=mongoose.Schema({//will describe how our data looks like
+const DisasterSchema = mongoose.Schema({//will describe how our data looks like
     disasterName:{
         type:String,
         required:true
@@ -24,4 +24,4 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
 
 });
 
-module.exports=mongoose.model('Disaster',DisasterSchema);
+module.exports = mongoose.model('Disaster',DisasterSchema);
