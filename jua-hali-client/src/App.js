@@ -1,13 +1,14 @@
 import React from 'react';
+// import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Jua Hali</h1>
-    </div>
+    <Home />
   );
 }
+
 
 export default App;

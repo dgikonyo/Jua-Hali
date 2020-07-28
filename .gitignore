@@ -1,7 +1,7 @@
 # Dependency directories
 node_modules/
 jspm_packages/
-
+jua-hali-client/node_modules/
 # Logs
 logs
 *.log
