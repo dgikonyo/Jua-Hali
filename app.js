@@ -8,7 +8,7 @@ const app=express();
 //now you have THE ABILITY TO CREATE ROUTES
 
 //import routes
-const disasterRoute=require('./routes/disasterRoute');
+const disasterRoute=require('./api/routes/disasterRoute');
 
 
 
