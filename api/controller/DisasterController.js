@@ -17,7 +17,11 @@ exports.allDisasters=async (req,res)=>{
 exports.createDisaster=async (req,res)=>{
     const disaster=new Disaster({
         disasterName:req.body.disasterName,
+        county:req.body.county,
+        subCounty:req.body.subCounty,
         location:req.body.location,
+        ward:req.body.ward,
+        village:req.body.village,
         description:req.body.description,
         responseStatus:req.body.responseStatus
     });
@@ -38,6 +42,7 @@ exports.singleDisaster=async(req,res)=>{
     }
     
 }
+
 exports.updateDisaster=async(req,res)=>{
     try{
         const updatedDisaster=await Disaster.findByIdAndUpdate(

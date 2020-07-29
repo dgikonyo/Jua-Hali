@@ -7,7 +7,19 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
         maxlength:[30,'Disaster Name cannot be more than 30 characters '],
         required:true 
     },
-    location:{
+    county:{
+        type:String,
+        required:true
+    },
+    subCounty:{
+        type:String,
+        required:true
+    },
+    ward:{
+        type:String,
+        required:true
+    },
+    village:{
         type:String,
         required:true
     },
