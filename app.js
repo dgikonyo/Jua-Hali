@@ -6,18 +6,32 @@ const app=express();
 
 const morgan=require('morgan');
 
+//Middlewares--will execute when we run a route
+app.use(bodyParser.urlencoded({extended:true}));//true allows us to extend complex bodies
+
+app.use(morgan('dev'));
+
+app.use((req,res,next)=>{
+    res.header('Allow-Control-Allow-Origin','*')//here we want to prevent errors concerning headers and we will allow it to be used by any client hence the use of '*'
+    res.header('Allow-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept,Authorization');//all these headers will be appended to an incoming request
+
+    /**
+     * A browser will always send an options request first when we send a PUT or post request
+     * 
+     */
+    if(req.method ==='OPTIONS'){
+        //no we tell the browser what it may send
+        res.header('Access-Control-Allow-Methods','PUT,POST,PATCH,DELETE,GET');//all the requests our api is going to be executing
+        return res.status(200).json({});
+    }
+    next();
+    
+});
 
 //now you have THE ABILITY TO CREATE ROUTES
 
 //import routes
 const disasterRoute=require('./api/routes/disasterRoute');
-
-
-
-//Middlewares--will execute when we run a route
-app.use(bodyParser.urlencoded({extended:true}));//true allows us to extend complex bodies
-
-app.use(morgan('dev'));
 
 /*app.use((req,res,next)=>{//it setsup a middleware and an incoming request will come thru this function
     response.status(200).json({
@@ -44,8 +58,6 @@ app.use((error,req,res,next)=>{
         }
     });
 });
-
-
 
 
 //but first we set a listener to connect to the server

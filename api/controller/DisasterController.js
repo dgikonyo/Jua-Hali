@@ -4,6 +4,8 @@ const Disaster=require('../models/Disaster');
 exports.allDisasters=async (req,res)=>{
     try{
        const disaster=await Disaster.find();
+
+       
        res.status(200).json({
            status:"success",
            data:{
@@ -19,12 +21,13 @@ exports.createDisaster=async (req,res)=>{
         disasterName:req.body.disasterName,
         county:req.body.county,
         subCounty:req.body.subCounty,
-        location:req.body.location,
         ward:req.body.ward,
         village:req.body.village,
         description:req.body.description,
         responseStatus:req.body.responseStatus
     });
+    
+  
     try{
         const savedDisaster=await disaster.save();
         res.json(savedDisaster);
