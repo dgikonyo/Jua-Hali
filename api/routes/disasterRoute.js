@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 
-const {allDisasters,createDisaster,singleDisaster,updateDisaster,deleteDisaster}=require('../../api/controller/DisasterController');
+const {allDisasters,createDisaster,singleDisaster,updateDisaster,deleteDisaster}=require('../controller/DisasterController');
 
 
 //gets back all the disasters in the database

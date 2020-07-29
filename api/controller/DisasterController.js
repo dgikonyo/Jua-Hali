@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-const Disaster=require('../../api/models/Disaster');
+const Disaster=require('../models/Disaster');
 
 exports.allDisasters=async (req,res)=>{
     try{
