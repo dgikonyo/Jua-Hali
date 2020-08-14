@@ -40,7 +40,8 @@ const disasterRoute=require('./api/routes/disasterRoute');
 });*/
 
 //when the link is entered, it will be directed to the disasterRoute file
-app.use('/disaster',disasterRoute);
+//instead of using app.use('/disaster',disasterRoute);  use the one below
+app.use('/',disasterRoute);
 
 //now we want to handle all requests and errors coming from requests
 app.use((req,res,next)=>{
@@ -52,15 +53,11 @@ app.use((req,res,next)=>{
 //from there we create a middleware to handle all sorts of errors
 app.use((error,req,res,next)=>{
     res.status(error.status || 500); //will be used to handle all other forms of errors including the one we created
-    res.json({
-        error:{
-            message:error.message
-        }
-    });
+    res.send(error.message);
+    
 });
 
 
 //but first we set a listener to connect to the server
 module.exports=app;
-
 
