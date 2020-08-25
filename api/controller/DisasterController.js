@@ -19,10 +19,7 @@ exports.allDisasters=async (req,res)=>{
 exports.createDisaster=async (req,res)=>{
     const disaster=new Disaster({
         disasterName:req.body.disasterName,
-        county:req.body.county,
-        subCounty:req.body.subCounty,
-        ward:req.body.ward,
-        village:req.body.village,
+        location:req.body.location,
         description:req.body.description,
         responseStatus:req.body.responseStatus
     });

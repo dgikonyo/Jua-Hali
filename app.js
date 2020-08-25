@@ -41,6 +41,7 @@ const disasterRoute=require('./api/routes/disasterRoute');
 
 //when the link is entered, it will be directed to the disasterRoute file
 //instead of using app.use('/disaster',disasterRoute);  use the one below
+
 app.use('/',disasterRoute);
 
 //now we want to handle all requests and errors coming from requests
