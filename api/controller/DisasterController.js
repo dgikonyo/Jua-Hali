@@ -8,9 +8,9 @@ exports.allDisasters=async (req,res)=>{
        
        res.status(200).json({
            status:"success",
-           data:{
+           
                disaster
-           }
+           
        });
     }catch(err){
         res.json({message:err.message});
