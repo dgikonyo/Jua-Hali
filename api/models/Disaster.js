@@ -17,11 +17,7 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
     },
     dateDiscovered:{
         type:Date,
-        subDocument: {
-            subDate: {
-                type: Date,
-            },
-        },
+        default:Date.now
     },
     responseStatus:{
         type:String,
@@ -30,5 +26,4 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
 
 });
 
-Schema.plugin(timeZone, { paths: ['date', 'subDocument.subDate'] });
 module.exports=mongoose.model('Disaster',DisasterSchema);
