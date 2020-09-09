@@ -30,5 +30,5 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
 
 });
 
-
+Schema.plugin(timeZone, { paths: ['date', 'subDocument.subDate'] });
 module.exports=mongoose.model('Disaster',DisasterSchema);
