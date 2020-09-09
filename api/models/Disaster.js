@@ -17,7 +17,11 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
     },
     dateDiscovered:{
         type:Date,
-        default: function(){return new Date().getTime()}
+        subDocument: {
+            subDate: {
+                type: Date,
+            },
+        },
     },
     responseStatus:{
         type:String,
@@ -25,5 +29,6 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
     },
 
 });
+
 
 module.exports=mongoose.model('Disaster',DisasterSchema);
