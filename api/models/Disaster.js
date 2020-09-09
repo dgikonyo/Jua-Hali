@@ -17,7 +17,7 @@ const DisasterSchema=mongoose.Schema({//will describe how our data looks like
     },
     dateDiscovered:{
         type:Date,
-        default:Date.now()
+        default:Date.now
     },
     responseStatus:{
         type:String,
